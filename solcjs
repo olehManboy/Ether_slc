@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+[ -e dist/solc.js ] || npm run build
+exec dist/solc.js "$@" < /dev/stdin
